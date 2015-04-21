@@ -6,7 +6,7 @@ app.controller('AuthController', function ($scope, $location, Auth) {
     Auth.register(user)
       .then(function () {
         console.log('Register successfully!');
-        $login.path('/');
+        $location.path('/');
       }, function (err) {
         console.log('Error...');
       })
