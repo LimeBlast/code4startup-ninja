@@ -10,14 +10,12 @@ a, a:hover, a:focus {
   color: #121515;
 }
 
-
-
 /* Form */
 
 .auth-forms {
-  max-width:400px;
-  margin:0 auto;  
-  padding:1px 25px 25px 25px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1px 25px 25px 25px;
 }
 
 /* Nav Bar */
@@ -62,7 +60,7 @@ a, a:hover, a:focus {
 
 .price-tag {
   font-size: 40px;
-  font-weight: 300;  
+  font-weight: 300;
   margin-top: 20px;
   text-align: center;
   background-color: #f1f1f1;
@@ -76,7 +74,7 @@ a, a:hover, a:focus {
 }
 
 .list-group .list-group-item .list-group-item-heading {
-  color: rgba(0,0,0,.77);
+  color: rgba(0, 0, 0, .77);
   font-size: 15px;
   font-weight: bold;
   line-height: 15px;
@@ -92,21 +90,21 @@ a, a:hover, a:focus {
 
 .list-group .list-group-item .payment {
   float: right;
-  margin-top: 0;  
+  margin-top: 0;
   width: 85px;
   text-align: center;
   font-size: 30px;
   line-height: 30px;
 }
 
-.list-group .list-group-item .payment .status{
+.list-group .list-group-item .payment .status {
   font-size: 14px;
   position: absolute;
   padding: 5px;
   right: 5px;
   bottom: 5px;
   width: 90px;
-  height: 25px; 
+  height: 25px;
 }
 
 .list-group-item-text {
