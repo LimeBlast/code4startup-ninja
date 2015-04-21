@@ -5,7 +5,8 @@ var app = angular
     'ngAnimate',
     'ngResource',
     'ngRoute',
-    'firebase'
+    'firebase',
+    'toaster'
   ])
   .constant('FURL', 'https://code4startup-ninja.firebaseio.com/')
   .config(function ($routeProvider) {
