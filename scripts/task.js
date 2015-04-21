@@ -17,12 +17,12 @@ app.controller('TaskController', function ($scope, FURL, $firebase, $location, $
   $scope.updateTask = function (task) {
     $scope.selectedTask.$save(task);
     $location.path('/browse');
-  }
+  };
 
   $scope.tasks = fbTasks;
 
   $scope.postTask = function (task) {
     fbTasks.$add(task);
     $location.path('/browse');
-  }
+  };
 });
