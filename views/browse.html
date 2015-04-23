@@ -106,26 +106,26 @@
                   <span>No comments for this task, be the first.</span>
                 </div>
 
-                <div class="row">
+                <div class="row" ng-repeat="com in comments">
                   <div class="col-md-1">
-                    <img ng-src="" alt="" class="img-circle comment gravatar"/>
+                    <img ng-src="{{com.gravatar}}" alt="" class="img-circle comment gravatar"/>
                   </div>
                   <div class="col-md-11">
                     <div class="well well-sm cmt">
-                      <span class="cmt-title">Dutch McLovin</span>
-                      <span class="cmt-time pull-right"><span am-time-ago="1234567890"></span></span><br/>
-                      <span>I can do this</span>
+                      <span class="cmt-title">{{com.name}}</span>
+                      <span class="cmt-time pull-right"><span am-time-ago="com.datetime"></span></span><br/>
+                      <span>{{com.content}}</span>
                     </div>
                   </div>
                 </div>
 
-                <div class="row">
+                <div class="row" ng-show="isOpen(selectedTask)">
                   <div class="col-md-12">
                     <form ng-submit="addComment()">
 
                       <div class="input-group">
                         <div class="input-group-addon">
-                          <img ng-src="" alt="" class="img-circle comment gravatar"/>
+                          <img ng-src="{{user.profile.gravatar}}" alt="" class="img-circle comment gravatar"/>
                         </div>
                         <input type="text" ng-model="content" cols="10" rows="3" class="form-control"
                                placeholder="Comment here..." required/>

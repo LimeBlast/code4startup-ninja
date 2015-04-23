@@ -1,11 +1,13 @@
 'use strict';
 
-app.controller('BrowseController', function ($scope, $routeParams, toaster, Task, Auth) {
+app.controller('BrowseController', function ($scope, $routeParams, toaster, Task, Auth, Comment) {
 
   $scope.searchTask = '';
   $scope.tasks = Task.all;
   $scope.signedIn = Auth.signedIn;
   $scope.listMode = true;
+
+  $scope.user = Auth.user;
 
   if ($routeParams.taskId) {
     var task = Task.getTask($routeParams.taskId).$asObject();
@@ -19,6 +21,18 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
     });
   };
 
+  $scope.addComment = function () {
+    var comment = {
+      content: $scope.content,
+      name: $scope.user.profile.name,
+      gravatar: $scope.user.profile.gravatar
+    };
+
+    Comment.addComment($scope.selectedTask.$id, comment).then(function () {
+      $scope.content = '';
+    });
+  };
+
   function setSelectedTask(task) {
     $scope.selectedTask = task;
 
@@ -26,6 +40,8 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
       $scope.isTaskCreator = Task.isCreator;
       $scope.isOpen = Task.isOpen;
     }
+
+    $scope.comments = Comment.comments(task.$id);
   }
 
 });
